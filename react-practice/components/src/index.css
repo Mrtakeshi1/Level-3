@@ -1,0 +1,68 @@
+body {
+  padding: 15px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://thumbs.gfycat.com/FarOldElephantbeetle-max-1mb.gif");
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+}
+
+.nav-items > li {
+  padding: 10px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 10px 10px lightcoral;
+  
+}
+
+.nav-logo {
+  width: 85px;
+}
+
+.content {
+  position: fixed;
+   width: 35%;
+   padding: 10px;
+   background-color: white;
+   color: black;
+   text-align: center;
+   left: 30%;
+   top: 13%;
+   box-shadow: 10px 10px lightcoral;
+}
+
+ol.list {
+  display: inline-block;
+  text-align: left;
+  margin-top: -5px;
+  margin-bottom: 25px;
+}
+
+.footer {
+  position: fixed;
+   left: 1%;
+   width: 98%;
+   bottom: 0;
+   padding: 2px;
+   background-color: lightgray;
+   color: black;
+   text-align: center;
+   box-shadow: -10px -10px lightcoral;
+}
