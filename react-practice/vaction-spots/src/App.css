@@ -1,0 +1,21 @@
+body {
+  margin: o;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.vaca {
+  border: 2px solid black;
+  border-radius: 8%;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}

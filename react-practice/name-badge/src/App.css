@@ -1,0 +1,101 @@
+body {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/089d21ad-7782-4104-89c2-a65435feaa61/d9lc6uq-61d5cd1b-f00f-4571-a3b2-1feb605fc5fa.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA4OWQyMWFkLTc3ODItNDEwNC04OWMyLWE2NTQzNWZlYWE2MVwvZDlsYzZ1cS02MWQ1Y2QxYi1mMDBmLTQ1NzEtYTNiMi0xZmViNjA1ZmM1ZmEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.HHadPEKFiZWufm6VhOIlKkkgP1NSUrUnxSMnYFqAjY8);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-box{
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  margin-top: 5%;
+}
+
+.form{
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: 3px solid black;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.inputField{
+  height: 20px;
+  width: 75%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-self: center;
+  border: 2px solid black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.textField{
+  grid-column: 1 / 3;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 10px;
+  border: 2px solid black;
+}
+
+.submitBtn{
+  grid-column: 1 / 3;
+  display: flex;
+  justify-self: center;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  font-weight: bold;
+}
+
+.badge-container{
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: 20px;
+}
+
+.badge-header{
+  grid-column: 1 / 3;
+  margin-left: -2.3%;
+  margin-right: -2.3%;
+  margin-top: -2.3%;
+  height: 45px;
+  background-color: gray;
+  border-radius: 9px;
+  display: flex;
+}
+
+.header-text{
+  align-self: center;
+  margin-left: 17px;
+  color: white;
+}
+
+.name-badge{
+  display: grid;
+  grid-column: 1 / 3;
+  grid-template-columns: 50% 50%;
+  padding: 20px;
+  border: 2px solid gray;
+  border-radius: 9px;
+}
+
+.badge-textarea{
+  grid-column: 1 / 3;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+
+.badge-info{
+  font-size: 18px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+textarea {
+  font-weight: bold;
+  font-size: 15px;
+}

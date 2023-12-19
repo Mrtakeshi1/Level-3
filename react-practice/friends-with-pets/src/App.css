@@ -1,0 +1,69 @@
+body {
+  background: url(https://cdnb.artstation.com/p/assets/images/images/026/128/253/original/lennart-butz-idea5anim5.gif?1587962321);
+  background-repeat: no-repeat;
+  background-size: 100% 105%;
+}
+
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  text-transform: capitalize;
+  padding: 10px;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 2%;
+  color: white;
+}
+
+.friend-container {
+  border: 3px solid black;
+  width: 295px;
+  padding: 10px;
+  background-color: lightgoldenrodyellow;
+}
+
+.name-age {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  margin-bottom: 0;
+  font-size: 35px;
+}
+
+.name {
+  margin-bottom: 0;
+}
+
+.pet-header {
+  margin-top: 0;
+}
+
+.pet-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-size: 13px;
+  border-top: 2px solid black;
+  padding-top: 2%;
+  padding-bottom: 3%;
+}
+
+.pet-name {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1;
+}
+
+.pet-breed {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+  
+}

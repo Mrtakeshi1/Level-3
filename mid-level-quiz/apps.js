@@ -43,15 +43,55 @@ function countVowels(str) {
   // If there are no matches, it returns 0.
 }
 
-const input = "Hello, World!";
-const vowels = countVowels(input);
-console.log(countVowels(input)); // Output: 3
+// const input = "Hello, World!";
+// const vowels = countVowels(input);
+// console.log(countVowels(input)); // Output: 3
 
 
-function countVowels(str) {
-  const matches = str.match(/[aeiou]/gi);
-  return matches ? matches.length : 0;
+// function countVowels(str) {
+//   const matches = str.match(/[aeiou]/gi);
+//   return matches ? matches.length : 0;
+// }
+
+function findSumOfTwo(numbers, target) {
+  const numMap = {};
+
+  for (let i = 0; i < numbers.length; i++) {
+    const complement = target - numbers[i];
+
+    if (numMap[complement] !== undefined) {
+      return [complement, numbers[i]];
+    }
+
+    numMap[numbers[i]] = i;
+  }
+
+  return [];
 }
 
-const input2 = 'Counting Vowels';
-console.log(countVowels(input2)); // Output: 5
+const numbers = [2, 4, 7, 11, 15];
+const target = 9;
+
+console.log(findSumOfTwo(numbers, target)); // Output: [2, 7]
+
+// function findSumOfTwo(numbers2, target2) {
+//   const numMap = {};
+
+//   for (let i = 0; i < numbers2.length; i++) {
+//     const complement = target2 - numbers2[i];
+
+//     if (numMap[complement] !== undefined) {
+//       return [complement, numbers2[i]];
+//     }
+
+//     numMap[numbers2[i]] = i;
+//   }
+
+//   return [];
+// }
+
+
+// const numbers2 = [5, 12, 3, 9, 1];
+// const target2= 8;
+
+// console.log(findSumOfTwo(numbers2, target2)); // Output: [3, 5

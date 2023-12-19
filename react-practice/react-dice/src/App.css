@@ -1,0 +1,35 @@
+body {
+  background-image: url(https://66.media.tumblr.com/43ff1ae84968ffd84606207e9995a78e/tumblr_py4mvbGe6h1tgo74ho1_1280.gif);
+  background-repeat: no-repeat;
+  background-size: 1880px 980px;
+}
+
+.App{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 6%;
+
+}
+
+.die{
+  width: 200px;
+  height: 200px;
+  border: solid 5px white;
+  background-color: white;
+  margin-top: 27%;
+  margin-left: 1%;
+}
+
+.die-number{
+  font-size: 65px;
+  position: fixed;
+  padding-left: 4%;
+}
+
+.die-button {
+  position: absolute;
+  top: 54%;
+  right: 49.1%;
+  font-size: 20px;
+  cursor: pointer;
+}
