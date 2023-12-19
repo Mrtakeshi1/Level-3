@@ -114,7 +114,7 @@ export default function Meme() {
           onChange={handleChange}
         />
         <button className="form--button" onClick={getMemeImage}>
-          New Meme  
+          New Meme
         </button>
         <button className="form--button" onClick={saveMeme}>
           {selectedMemeIndex !== null ? "Edit Meme ✏️" : "Save Memes 📁"}
@@ -126,16 +126,22 @@ export default function Meme() {
         <h2 className="meme--text bottom">{meme.bottomText}</h2>
       </div>
       <div className="saved-memes">
-        <h2>Created Memes</h2>
-        <ol>
+        <h2 className="box">Created Memes</h2>
+        <div className="saved-memes-list">
           {savedMemes.map((savedMeme, index) => (
-            <li key={index}>
-              <img src={savedMeme.randomImage} alt="Saved memes" />
-              <button onClick={() => editMeme(index)}>Edit</button>
-              <button onClick={() => deleteMeme(index)}>Delete</button>
-            </li>
+            <div key={index} className="saved-meme">
+              <div style={{ position: "relative" }}>
+                <img src={savedMeme.randomImage} alt="Saved memes" className="meme--image" />
+                <h2 className="meme--text top">{savedMeme.topText}</h2>
+                <h2 className="meme--text bottom">{savedMeme.bottomText}</h2>
+              </div>
+              <div className="meme-buttons">
+                <button className="edit" onClick={() => editMeme(index)}>Edit</button>
+                <button onClick={() => deleteMeme(index)}>Delete</button>
+              </div>
+            </div>
           ))}
-        </ol>
+        </div>
       </div>
     </main>
   );
