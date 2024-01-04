@@ -1,17 +1,22 @@
 import React from "react";
+import SingleMeme from "./SingleMeme";
+import {v4 as uuidv4} from 'uuid'
 
 export default function Meme() {
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
+    _id: ''
   });
 
+  
   const [allMemes, setAllMemes] = React.useState([]);
   const [savedMemes, setSavedMemes] = React.useState([]);
   const [selectedMemeIndex, setSelectedMemeIndex] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
-
+  
+  console.log(savedMemes)
   React.useEffect(() => {
     setLoading(true);
     fetch("https://api.imgflip.com/get_memes")
@@ -64,6 +69,7 @@ export default function Meme() {
         // Preserve topText and bottomText values
         topText: meme.topText || "Default Top Text",
         bottomText: meme.bottomText || "Default Bottom Text",
+        _id: uuidv4(),
       };
 
       if (!savedMemes.some((m) => m.randomImage === meme.randomImage)) {
@@ -79,18 +85,18 @@ export default function Meme() {
     });
   }
 
-  function deleteMeme(index) {
-    setSavedMemes((prevMemes) => {
-      const updatedMemes = [...prevMemes];
-      updatedMemes.splice(index, 1);
-      return updatedMemes;
-    });
+  function deleteMeme(memeId) {
+    setSavedMemes((prevMemes) => prevMemes.filter((meme) => meme._id !== memeId));
   }
 
-  function editMeme(index) {
-    const selectedMeme = savedMemes[index];
-    setMeme(selectedMeme);
-    setSelectedMemeIndex(index);
+  function editMeme(memeId, update) {
+    setSavedMemes(prevMemes => prevMemes.map((meme) => meme._id !== memeId ? meme : update))
+  }
+
+  const [isEdit, setIsEdit] = React.useState(false)
+
+  function toggleEdit(){
+      setIsEdit(prev => !prev)
   }
 
   return (
@@ -129,17 +135,14 @@ export default function Meme() {
         <h2 className="box">Created Memes</h2>
         <div className="saved-memes-list">
           {savedMemes.map((savedMeme, index) => (
-            <div key={index} className="saved-meme">
-              <div style={{ position: "relative" }}>
-                <img src={savedMeme.randomImage} alt="Saved memes" className="meme--image" />
-                <h2 className="meme--text top">{savedMeme.topText}</h2>
-                <h2 className="meme--text bottom">{savedMeme.bottomText}</h2>
-              </div>
-              <div className="meme-buttons">
-                <button className="edit" onClick={() => editMeme(index)}>Edit</button>
-                <button onClick={() => deleteMeme(index)}>Delete</button>
-              </div>
-            </div>
+            <SingleMeme 
+              savedMeme = {savedMeme}
+              key = {index}
+              deleteMeme= {deleteMeme}
+              editMeme= {editMeme}
+              isEdit ={isEdit}
+              toggleEdit = {toggleEdit}
+            />
           ))}
         </div>
       </div>
